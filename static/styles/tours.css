@@ -1,0 +1,94 @@
+/* General body styling for dark theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Dark background for the body */
+    margin: 0;
+    padding: 20px;
+    color: #ffffff; /* Light text color for contrast */
+}
+
+/* Header styling */
+h1 {
+    text-align: center; /* Center the main header */
+    color: #0d6efd; /* Bright blue for the main header */
+}
+
+/* Container for cards (flexbox) */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Individual card styling */
+.card {
+    background-color: #1e1e1e; /* Dark background for the card */
+    border: 1px solid #333333; /* Slightly lighter border for the card */
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Subtle white shadow for depth */
+    flex: 0 0 calc(25% - 20px);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px); /* Slightly raise the card */
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2); /* Increased shadow for a "lighting" effect */
+}
+
+/* Sub-header styling within each card */
+.card h2 {
+    text-align: center; /* Center the sub-header */
+    color: #4caf50; /* Green color for sub-headers */
+}
+
+/* Grid layout for card content */
+.card-content {
+    display: grid;
+    grid-template-columns: 1fr; /* One column layout */
+    row-gap: 10px; /* Space between rows */
+}
+
+/* Content title and detail styling */
+.card-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cccccc; /* Light grey color for the text */
+    margin: 0; /* Remove default margins */
+    display: flex;
+    justify-content: space-between; /* Space out title and content */
+    align-items: center;
+}
+
+/* Content title styling */
+.card-content p strong {
+    margin-right: 10px; /* Space between title and content */
+}
+
+/* Styling for 'No data available' message */
+p.no-data {
+    text-align: center;
+    color: #ff4444; /* Bright red for the 'No data' message */
+}
+
+/* Ensure cards take full width on smaller screens */
+@media (max-width: 1200px) {
+    .card {
+        flex: 0 0 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(100% - 20px);
+    }
+}

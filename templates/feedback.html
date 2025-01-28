@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack</title>
+    <link rel="stylesheet" href="./static/styles/feedback.css" />
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    <form action="/submit-feedback" method="post">
+        <label for="feedback">Enter your feedback:</label><br>
+        <input type="text" id="feedback" name="feedback"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h1>Feedback</h1>
+    <ul>
+        {% for feedback in Fdata %}
+            <li>{{ feedback[0] }}</li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>

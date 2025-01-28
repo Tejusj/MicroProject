@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voyage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/tours.css') }}" />
+</head>
+<body>
+    <h1>Explore The Plans</h1>
+    <div class="card-container">
+        {% if data %}
+            {% for row in data %}
+                <div class="card">
+                    <h2>Plan {{ loop.index }}</h2>
+                    <div class="card-content">
+                        <p><strong>ID:</strong> {{ row[0] }}</p>
+                        <p><strong>Name:</strong> {{ row[1] }}</p>
+                        <p><strong>User:</strong> {{ row[2] }}</p>
+                        <p><strong>Details:</strong> {{ row[3] }}</p>
+                        <p><strong>Providers:</strong> {{ row[4] }}</p>
+                        <p><strong>Email:</strong> {{ row[5] }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-data">No data available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

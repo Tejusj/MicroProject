@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/stylelogin.css') }}" />
+
+        
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <form action="{{ url_for('login') }}" method="post">
+        <input type="text" name="userid" placeholder="Userid" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    
+    <!-- Form to navigate to Register Page -->
+    <form action="/register" method="get">
+        <input type="submit" value="Register" class="register-btn">
+    </form>
+</div>
+
+</body>
+</html>
